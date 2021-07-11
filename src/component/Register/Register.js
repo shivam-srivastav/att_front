@@ -6,7 +6,7 @@ const Register = () => {
     <div id="right">
       <div id="panel">
         <img src="" alt=""/>
-          <h5>Experience the New Era of Attendance</h5>
+          <h5>Experience the New Era of Automatic Attendance</h5>
           <p>Create your account</p>
           <form action="/register" method="POST">
             <input type="text" name="name" placeholder="Name" required />
