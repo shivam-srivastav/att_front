@@ -14,8 +14,13 @@ const ShowAttendence = () => {
     dispatch(Action.showAttendence({ userid, date }));
     setshow(true);
   };
-  const data = att_list.map((item) => {
-    return { name: item, attend: "Present" };
+  console.log(att_list);
+  const data = att_list?.map((item) => {
+    return {
+      name: item.name,
+      attend: "Present",
+      roll_no: item.roll_no,
+    };
   });
   const column = [
     {
@@ -26,7 +31,12 @@ const ShowAttendence = () => {
       title: "Attendence",
       field: "attend",
     },
+    {
+      title: "Roll No",
+      field: "roll_no",
+    },
   ];
+  console.log(data);
   return (
     <div>
       <h1 style={{ margin: "1rem" }}>Show Attendance</h1>

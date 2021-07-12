@@ -25,7 +25,7 @@ const Dashboard = () => {
           <li>
             <img src={create} alt="create" />
           </li>
-          <li>Create Attendence</li>
+          <li>Manage Student</li>
         </Button>
         <Link to="takeAttendence">
           <Button style={{ margin: "1rem" }} variant="success" size="lg">

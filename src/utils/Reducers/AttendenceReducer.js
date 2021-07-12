@@ -2,7 +2,7 @@ import * as TT from "../ActionTypes/ActionTypes";
 
 const intialState = {
   loading: false,
-  att_list: ["shivam", "vikas", "riya"],
+  att_list: [],
 };
 
 const TaskReducer = (state = intialState, actions) => {

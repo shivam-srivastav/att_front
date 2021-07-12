@@ -24,7 +24,10 @@ export const login_user = (data) => {
         console.log("Login Successful");
         dispatch(replace("./dashboard"));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert("Login Failed");
+        console.log(err);
+      });
   };
 };
 export const register_user = (data) => {
@@ -40,13 +43,19 @@ export const register_user = (data) => {
         console.log("Register Successful");
         dispatch(replace("./dashboard"));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert("Register Failed");
+        console.log(err);
+      });
   };
 };
 export const takeAttendence = (data) => {
   return (dispatch) => {
     takeAttend(data)
-      .then((res) => console.log(res))
+      .then((res) => {
+        window.alert("Attendance is Takken Successfully");
+        console.log(res);
+      })
       .catch((err) => console.log(err));
   };
 };
@@ -54,10 +63,13 @@ export const showAttendence = (data) => {
   return (dispatch) => {
     getAttend(data)
       .then((res) => {
-        console.log(res);
-        // dispatch(show_att(res));
+        console.log(res.data[0].data);
+        dispatch(show_att(res.data[0].data));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        window.alert("No Records Found");
+        console.log(err);
+      });
   };
 };
 export const show_att = (data) => ({
