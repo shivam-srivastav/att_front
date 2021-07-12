@@ -17,7 +17,12 @@ const callAPI = async function (method, url, data = {}) {
   return fetch(server_url + url, options).then((res) => res.json());
 };
 export const login = (data) => callAPI("post", `${api}/login`, data);
+export const register = (data) => callAPI("post", `${api}/register`, data);
 export const getUser = (data = {}) => callAPI("get", `${api}/getuser`, data);
+export const takeAttend = (data = {}) =>
+  callAPI("post", `${api}/takeAttend`, data);
+export const getAttend = (data = {}) =>
+  callAPI("post", `${api}/getAttend`, data);
 export const addingTask = (data) =>
   callAPI("post", "/task/lead_6996a7dcdddc4af3b4f71ccb985cea38", data);
 export const getAllTask = (data = {}) =>

@@ -1,7 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import * as Action from "../../utils/Actions/AttendenceActions";
 const TakeAttendence = () => {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.user);
   const [date, setdate] = useState("");
   const [img, setimg] = useState("");
   const [preview, setpreview] = useState(false);
@@ -9,6 +13,9 @@ const TakeAttendence = () => {
   const [file, setfile] = useState("");
   const handleFinalSubmit = () => {
     console.log(date, url, "user");
+    dispatch(
+      Action.takeAttendence({ userid: state._id, img: url, date: date })
+    );
     setdate("");
     setfile("");
     seturl("");

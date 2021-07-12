@@ -1,7 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Home = () => {
+  const user = useSelector((state) => state.user);
   return (
     <div style={{ textAlign: "left", margin: "1rem" }}>
       <h1>Project Name: Automatic Attendance System</h1>
@@ -11,33 +13,41 @@ const Home = () => {
           <b>Shivam Srivastava</b>
         </li>
         <li>
-          <b>Shivam Srivastava</b>
+          <b>Vikas Kumar Ojha</b>
         </li>
         <li>
-          <b>Shivam Srivastava</b>
+          <b>Riya Nigam</b>
         </li>
       </div>
       <div style={{ margin: "1rem", textAlign: "justify" }}>
         <h2>Project Details</h2>
         <p>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College in Virginia, looked up one of the more obscure
-          Latin words, consectetur, from a Lorem Ipsum passage, and going
-          through the cites of the word in classical literature, discovered the
-          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-          Evil) by Cicero, written in 45 BC. This book is a treatise on the
-          theory of ethics, very popular during the Renaissance. The first line
-          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-          section 1.10.32.
+          <b>Problem Statement:-</b> Marking attendance is both time and effort
+          taking process. On average it takes at least 5 min of the lecture to
+          mark the attendance. Also, there are numerous challenges in marking
+          attendance with good accuracy as sometimes there might be a student
+          whose voice might not be loud enough and he might get left which is a
+          big problem. Also, there are situations in which students might trick
+          the teacher for proxy attendance
+        </p>
+        <p>
+          <b>Solution:-</b> To counter the above problems we propose the idea of
+          an automatic attendance system that recognizes the students present in
+          the image uploaded to it and marks the attendance automatically saving
+          both the time and effort of the teacher as well as students. It will
+          also remove the chance of proxy attendance.
         </p>
       </div>
       <div style={{ textAlign: "center" }}>
-        <Link to="./login">
-          <Button variant="primary">Login to Access</Button>
-        </Link>
+        {!user?._id ? (
+          <Link to="./login">
+            <Button variant="primary">Login to Access</Button>
+          </Link>
+        ) : (
+          <Link to="./dashboard">
+            <Button variant="primary">Go to Dashboard</Button>
+          </Link>
+        )}
       </div>
     </div>
   );

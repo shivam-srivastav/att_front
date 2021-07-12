@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,25 +13,26 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import ShowAttendence from "./ShowAttendence/ShowAttendence";
 import TakeAttendence from "./Take Attendence/TakeAttendence";
-const route = () => {
+const AppRoute = () => {
+  const user = useSelector((state) => state.user);
   return (
     <Router>
       <Header />
       <Switch>
         <Route exact path="/login">
-          <Login />
+          {!user._id ? <Login /> : <Redirect to="/dashboard" />}
         </Route>
         <Route exact path="/register">
-          <Register />r
+          {!user._id ? <Register /> : <Redirect to="/dashboard" />}
         </Route>
         <Route exact path="/dashboard">
-          <Dashboard />
+          {!user._id ? <Redirect to="login" /> : <Dashboard />}
         </Route>
         <Route exact path="/takeAttendence">
-          <TakeAttendence />
+          {!user._id ? <Redirect to="/login" /> : <TakeAttendence />}
         </Route>
         <Route exact path="/showAttendence">
-          <ShowAttendence />
+          {!user._id ? <Redirect to="/login" /> : <ShowAttendence />}
         </Route>
         <Route path="/home">
           <Home />
@@ -42,4 +44,4 @@ const route = () => {
     </Router>
   );
 };
-export default route;
+export default AppRoute;

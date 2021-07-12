@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Header = () => {
+  const status = useSelector((state) => state.user);
   return (
     <div
       style={{
@@ -17,9 +19,28 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link style={{ textDecoration: "none", color: "#000" }} to="./login">
-          Login
-        </Link>
+        {!status?._id ? (
+          <>
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="./login"
+            >
+              Login
+            </Link>
+            /
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="./register"
+            >
+              Register
+            </Link>
+          </>
+        ) : (
+          <>
+            <span>Hi, {status.email.split("@")[0]}</span>
+            <span style={{ marginLeft: "1rem" }}>Log Out</span>
+          </>
+        )}
       </li>
     </div>
   );
