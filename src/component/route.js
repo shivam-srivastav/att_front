@@ -10,6 +10,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
+import ManageStudent from "./ManageStudent/ManageStudent";
 import Register from "./Register/Register";
 import ShowAttendence from "./ShowAttendence/ShowAttendence";
 import TakeAttendence from "./Take Attendence/TakeAttendence";
@@ -30,6 +31,9 @@ const AppRoute = () => {
         </Route>
         <Route exact path="/takeAttendence">
           {!user._id ? <Redirect to="/login" /> : <TakeAttendence />}
+        </Route>
+        <Route exact path="/manageStudent">
+          {!user._id ? <Redirect to="/login" /> : <ManageStudent />}
         </Route>
         <Route exact path="/showAttendence">
           {!user._id ? <Redirect to="/login" /> : <ShowAttendence />}

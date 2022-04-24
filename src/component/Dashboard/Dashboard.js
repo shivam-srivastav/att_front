@@ -21,12 +21,14 @@ const Dashboard = () => {
           alignItems: "center",
         }}
       >
-        <Button style={{ margin: "1rem" }} variant="info" size="lg">
-          <li>
-            <img src={create} alt="create" />
-          </li>
-          <li>Manage Student</li>
-        </Button>
+        <Link to="manageStudent">
+          <Button style={{ margin: "1rem" }} variant="info" size="lg">
+            <li>
+              <img src={create} alt="create" />
+            </li>
+            <li>Manage Student</li>
+          </Button>
+        </Link>
         <Link to="takeAttendence">
           <Button style={{ margin: "1rem" }} variant="success" size="lg">
             <li style={{ margin: "0.5rem" }}>

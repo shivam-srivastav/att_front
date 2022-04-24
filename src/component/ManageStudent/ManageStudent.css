@@ -1,0 +1,30 @@
+.manage-student {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.manage-div {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.manage-div li {
+    margin: 1rem;
+}
+
+.picker img {
+    width: 10rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons button {
+    margin: 1rem;
+    padding: .5rem 1rem;
+}
