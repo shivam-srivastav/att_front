@@ -1,4 +1,4 @@
-import { server_url, access_token } from "../../config";
+import { server_url } from "../../config";
 
 const api = "/api/v1";
 const callAPI = async function (method, url, data = {}) {

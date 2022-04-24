@@ -2,21 +2,19 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import './Home.css';
 const Home = () => {
   const user = useSelector((state) => state.user);
   return (
     <div style={{ textAlign: "left", margin: "1rem" }}>
-      <h1>Project Name: Automatic Attendance System</h1>
+      <h1 className="title">AUTOMATIC ATTENDENCE SYSTEM</h1>
       <div style={{ margin: "2rem" }}>
         <h3>Group Members:</h3>
         <li>
-          <b>Shivam Srivastava</b>
+          <b>Kanishka Sharma</b>
         </li>
         <li>
-          <b>Vikas Kumar Ojha</b>
-        </li>
-        <li>
-          <b>Riya Nigam</b>
+          <b>Dishant Khatri</b>
         </li>
       </div>
       <div style={{ margin: "1rem", textAlign: "justify" }}>
