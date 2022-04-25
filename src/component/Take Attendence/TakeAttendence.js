@@ -24,9 +24,9 @@ const TakeAttendence = () => {
   };
   const handleSubmit = () => {
     const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "vyqu6pwy");
-    fetch("https://api.cloudinary.com/v1_1/shivam1534/image/upload", {
+    data.append("image", file);
+    data.append("name", "knsk");
+    fetch("http://localhost:5000/api/v1/photo", {
       method: "post",
       body: data,
     })
@@ -34,7 +34,7 @@ const TakeAttendence = () => {
       .then((res) => {
         console.log(res);
         setpreview(true);
-        seturl(res.url);
+        seturl(res.data.url);
       });
   };
   console.log(date);

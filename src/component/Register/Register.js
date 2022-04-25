@@ -50,7 +50,7 @@ const Register = () => {
               name="password"
               placeholder="Password"
               required
-              onChange={(e) => setpassword(e.target.password)}
+              onChange={(e) => setpassword(e.target.value)}
               value={password}
             />
             <input onClick={handleSubmit} type="submit" value="SignUp" />

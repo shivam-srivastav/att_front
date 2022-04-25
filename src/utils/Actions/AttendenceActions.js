@@ -32,6 +32,7 @@ export const login_user = (data) => {
 };
 export const register_user = (data) => {
   return (dispatch) => {
+    console.log(data)
     register(data)
       .then((res) => {
         console.log(res);
